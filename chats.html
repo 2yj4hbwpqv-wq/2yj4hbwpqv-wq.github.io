@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>MAX / Чаты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container glass-card">
+        
+        <div class="sidebar">
+            <div class="sidebar-top">
+                <img src="https://i.imgflip.com/1g8my4.jpg" class="my-mini-avatar" id="open-profile-btn">
+                <input type="text" class="glass-input search-input" placeholder="Поиск...">
+                <button id="theme-btn" class="theme-toggle">🌙</button>
+            </div>
+
+            <div class="chat-list">
+                <div class="chat-item active" data-id="general" data-status="online">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1370/1370907.png" class="chat-avatar">
+                        <div class="status-dot online"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Общий чат</div>
+                        <div class="chat-last-msg">Чат с реальными людьми</div>
+                    </div>
+                    <div class="chat-time">12:00</div>
+                </div>
+                <div class="chat-item" data-id="gemini" data-status="online">
+                    <div class="avatar-container">
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png" class="chat-avatar">
+                        <div class="status-dot online"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Gemini</div>
+                        <div class="chat-last-msg">Готов помочь вам.</div>
+                    </div>
+                    <div class="chat-time">11:45</div>
+                </div>
+                <div class="chat-item" data-id="влад" data-status="online">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145867.png" class="chat-avatar">
+                        <div class="status-dot online"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Влад (Друг)</div>
+                        <div class="chat-last-msg">Погнали в доту?</div>
+                    </div>
+                    <div class="chat-time">Вчера</div>
+                </div>
+                <div class="chat-item" data-id="кот" data-status="online">
+                    <div class="avatar-container">
+                        <img src="https://i.imgflip.com/1ur9b0.jpg" class="chat-avatar">
+                        <div class="status-dot online"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Кот ОКАК</div>
+                        <div class="chat-last-msg">Мяу! ОКАК!</div>
+                    </div>
+                    <div class="chat-time">Вчера</div>
+                </div>
+                <div class="chat-item" data-id="гопник" data-status="offline">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1533/1533506.png" class="chat-avatar">
+                        <div class="status-dot offline"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Гопник</div>
+                        <div class="chat-last-msg">Семки есть?</div>
+                    </div>
+                    <div class="chat-time">Среда</div>
+                </div>
+                <div class="chat-item" data-id="учитель" data-status="offline">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1945/1945136.png" class="chat-avatar">
+                        <div class="status-dot offline"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Учитель</div>
+                        <div class="chat-last-msg">Завтра в школу с родителями!</div>
+                    </div>
+                    <div class="chat-time">Пнд</div>
+                </div>
+            </div>
+
+            <div class="profile-panel" id="profile-panel">
+                <div class="profile-header">
+                    <button id="close-profile-btn" class="icon-btn">← Назад</button>
+                    <span>Профиль</span>
+                    <div style="width: 50px;"></div>
+                </div>
+                <div class="profile-body">
+                    <img src="https://i.imgflip.com/1g8my4.jpg" class="profile-big-avatar">
+                    <h2 id="profile-name-display">Имя</h2>
+                    <p id="profile-username-display">@username</p>
+                    <button id="logout-btn" class="glass-button logout-button">Выйти из аккаунта</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-chat">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center;">
+                    <div class="avatar-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1370/1370907.png" id="header-avatar" class="chat-avatar">
+                        <div class="status-dot online" id="header-status"></div>
+                    </div>
+                    <div class="header-info">
+                        <div id="header-name" class="header-name">Общий чат</div>
+                        <div id="header-prompt" class="header-prompt">Онлайн</div>
+                    </div>
+                </div>
+                <button id="clear-chat-btn" class="icon-btn" style="font-size: 20px;" title="Очистить чат">🗑️</button>
+            </div>
+
+            <div id="chat-window" class="chat-window"></div>
+            
+            <div id="meme-picker" class="meme-picker"></div>
+
+            <div class="input-area">
+                <input type="text" id="message-input" class="glass-input" placeholder="Написать сообщение...">
+                <button id="send-btn" class="glass-button send-button" disabled>➤</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
